@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Ponto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Ponto na Blockchain</h1>
+        <div id="menu">
+            <button onclick="showRegisterForm()">Registrar Funcionário</button>
+            <button onclick="showEntryForm()">Registrar Entrada</button>
+            <button onclick="showExitForm()">Registrar Saída</button>
+            <button onclick="showRecords()">Ver Registros</button>
+            <button onclick="verifyChain()">Verificar Cadeia</button>
+        </div>
+
+        <div id="forms">
+            <!-- Formulário para registrar funcionário -->
+            <div id="registerForm" style="display: none;">
+                <input type="text" id="employeeId" placeholder="ID do Funcionário">
+                <input type="text" id="employeeName" placeholder="Nome do Funcionário">
+                <button onclick="registerEmployee()">Registrar</button>
+            </div>
+
+            <!-- Formulário para registrar entrada -->
+            <div id="entryForm" style="display: none;">
+                <input type="text" id="entryEmployeeId" placeholder="ID do Funcionário">
+                <button onclick="recordEntry()">Registrar Entrada</button>
+            </div>
+
+            <!-- Formulário para registrar saída -->
+            <div id="exitForm" style="display: none;">
+                <input type="text" id="exitEmployeeId" placeholder="ID do Funcionário">
+                <button onclick="recordExit()">Registrar Saída</button>
+            </div>
+        </div>
+
+        <!-- Container para exibir os registros -->
+        <div id="records" style="display: none;">
+            <h2>Registros na Blockchain</h2>
+            <div id="recordsList"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
